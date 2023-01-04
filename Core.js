@@ -1410,34 +1410,6 @@ return list[Math.floor(list.length * Math.random())]
     }      
 
 switch(command) {
-	
-    case 'sc': case 'script': case 'sourcecode': {
-        if (isBan) return reply(mess.banned)	 			
-    if (isBanChat) return reply(mess.bangc)
-    teks = `*${global.BotName}'s Script*\n\n*GitHub*: ${global.BotSourceCode}\n\nDont forget to follow me on *GH* and give a ⭐️ to my projects. `
-    let buttons = [
-    {buttonId: `${prefix}menu`, buttonText: {displayText: '✨Bot Menu✨'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: Thumb,
-    jpegThumbnail: BotLogo ,
-    caption: teks,
-    footer: `${BotName }`,
-    buttons: buttons,
-    headerType: 4,
-    /*contextInfo:{externalAdReply:{
-    title:"Powered by ✨️MAGIC✨️",
-    body: " ", 
-    thumbnail: fs.readFileSync("Assets/pic2.jpg"),
-    mediaType:1,
-    mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
-    sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
-    }}*/
-
-    }
-    Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-    break
 
 
 case 'me': case 'profile': case 'p':
