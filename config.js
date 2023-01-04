@@ -14,9 +14,9 @@ global.BotName = "Miku"
 global.packname = "Erstellt Für ✨️MAGIC✨️"
 global.author = "Für: ✨️MAGIC✨️"
 global.OwnerName = "✨️MAGIC✨️"
-global.BotSourceCode = "https://github.com/FantoX001/Miku-MD" // -- Please don't change -- //
+global.BotSourceCode = "https://github.com/Kai0071"
 global.SupportGroupLink = "https://chat.whatsapp.com/JcBzjRIxM5UHfuJbt0KrWt"  // -- Please don't change -- //
-global.sessionName = "session"  // -- Don't change otherwise bot will not work -- //
+global.sessionName = "session"
 
 
 
@@ -27,8 +27,8 @@ global.location = "West Berlin, Germany"
 global.reactmoji = "❤️"
 global.themeemoji = "💖"
 global.vidmenu = { url: 'https://c.tenor.com/YGuLegQWubwAAAPo/miku-nakano-gotoubun-no-hanayome.mp4' }
-global.websitex = "https://github.com/FantoX001"
-global.lolhuman = "KaysaS"
+global.websitex = "https://github.com/Kai0071"
+global.lolhuman = "✨️MAGIC✨️"
 
 
 global.BotLogo = fs.readFileSync("./Assets/pic1.jpg")
