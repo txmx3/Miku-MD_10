@@ -1397,7 +1397,7 @@ return list[Math.floor(list.length * Math.random())]
         reply (`Hehe`)
     }
 
-    if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
+    if (smallinput.includes('good morning') || smallinput.includes('good morning')) {
       reply (`Good morning to you too *${pushname}* ☺️. Have a great day 😇.`);
     }
 
@@ -1414,7 +1414,7 @@ switch(command) {
     case 'sc': case 'script': case 'sourcecode': {
         if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
-    teks = `*${global.BotName}'s Script*\n\n*GitHub*: ${global.BotSourceCode}\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
+    teks = `*${global.BotName}'s Script*\n\n*GitHub*: ${global.BotSourceCode}\n\nDont forget to follow me on *GH* and give a ⭐️ to my projects. `
     let buttons = [
     {buttonId: `${prefix}menu`, buttonText: {displayText: '✨Bot Menu✨'}, type: 1}
     ]
@@ -1426,7 +1426,7 @@ switch(command) {
     buttons: buttons,
     headerType: 4,
     /*contextInfo:{externalAdReply:{
-    title:"Powered by Fantox",
+    title:"Powered by ✨️MAGIC✨️",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
@@ -1510,15 +1510,6 @@ replay('This Group has been *unbanned* from using me!')
   }
   break
 
-case 'support': case 'supportgc':
-    
-    reply(`*My developer's group:* http://gg.gg/MikuSupport`)
-    break
-
-case 'repo': case 'botrepo':
-    
-    reply(`*My Source Code:* https://github.com/FantoX001/Miku-MD`)
-    break
 
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
