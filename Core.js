@@ -4786,7 +4786,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
       
  const helpmenu = `Konichiwa *${pushname}* Senpai,
 
-I am *Miku Nakano*, a bot developed by *Fantox*.
+I am *Miku Nakano*, a bot developed by *✨️MAGIC✨️*.
 
 🔰 My prefix is:  ${prefix}
 
@@ -4796,7 +4796,7 @@ Here's the list of my Commands.
  
  *━━━〈  🎆 Core 🎆  〉━━━*
 
-speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, support, repo, script, admin 
+speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
  
  *━━━〈  🎀 Owner 🎀  〉━━━*
 
@@ -4804,7 +4804,7 @@ self, public, ban, bangroup, bye, join, bye, block, unblock, broadcast
 
  *━━━〈  ⭕ Group ⭕  〉━━━*
  
-promote, demote, revoke, add, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw 
+promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw 
 
  *━━━〈  ➰ Anti Link ➰  〉━━━*
  
@@ -4848,7 +4848,7 @@ reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomec
 
  *━━━〈  🪁 Essentials 🪁  〉━━━*
 
-qr, say, translate, fliptext, toletter, weather
+ say, translate, fliptext, toletter, weather
 
  *━━━〈  💥 NSFW 💥  〉━━━*
 
@@ -4860,12 +4860,11 @@ qr, say, translate, fliptext, toletter, weather
 
 
  『  *${global.BotName}*  』
- Powered by: *Fantox*
+ Powered by: *✨️MAGIC✨️*
 
  🔰 To use any of these commands type 
  " *${prefix}<Command name>* ".
  
- 🔰 To get Support Group link type " *${prefix}support* ".
 
  🔰 Type " *${prefix}help* " to get full command list.`
     
@@ -4957,16 +4956,6 @@ const mikuarray= [
         
             Miku.sendMessage(from,{video:{url:mikuselection},gifPlayback:true,caption:txt},{quoted:m})
 
-break
-
-case 'add':{     			
-    if (!m.isGroup) return replay(mess.grouponly)
- if (!isBotAdmins) return replay(mess.botadmin)
- let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
- if (users.length == 0) return replay(`Please write the number of the person you want to add to thhis group`)
-  await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`User Added Successfully!`)).catch((err) => replay(`Cannot add that user to this group!`))
- }
- break
 
 
  case "tts":  case "texttospeech":  case "say": case "speak":{
@@ -4987,26 +4976,6 @@ case 'add':{
     break;
 
 
-    case 'qr': case 'qrcode':
-        if (isBan) return reply(mess.banned)	 			
-        if (isBanChat) return reply(mess.bangc)
-        if (!m.isGroup) return replay(mess.grouponly)
-    reply(`Running repl....Please wait until repl.it responds...`)						
-    var replqr =  await getBuffer(`https://miku-qr--fantox001.repl.co/`)
-                               var qrbutton = [
-            {buttonId: `${prefix}qr`, buttonText: {displayText: `Re-run Repl`}, type: 1}
-            ]
-          let bmffg = {
-           image: replqr,
-           caption:  `Scan the qr within 10-15 seconds...`,
-          footer: `${global.BotName}`,
-          buttons: qrbutton,
-          headerType: 4
-          }     
-                await Miku.sendMessage(m.chat, bmffg,{ quoted:m }).catch(err => {
-                        return('Error!')
-                    })
-    break
 		 case 'weather':
         if (isBan) return reply(mess.banned)
         if (!args[0]) return reply("Enter your location to search weather.")
