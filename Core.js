@@ -197,7 +197,7 @@ const AntiLinkFacebook = m.isGroup ? ntilinkfb.includes(from) : false
 const AntiLinkTiktok = m.isGroup ? ntilinktt.includes(from) : false
 const AntiLinkTelegram = m.isGroup ? ntilinktg.includes(from) : false
 const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
-const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
+const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : true
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
@@ -2669,7 +2669,7 @@ let mentioned = participants.map(v => v.jid)
      sizny = res.content[0].attrs.size
      if (sizny < 20) {
      teks = `Sorry, munimun 20 members are required in a group to add bot!`
-     sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "916909137213@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
+     sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "4915212908434@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
      } else if (sizny > 20) {
      await Miku.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
      replay("Joined !")
@@ -4768,7 +4768,7 @@ Here's the list of my Commands.
  
  *━━━〈  🎆 Core 🎆  〉━━━*
 
-speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
+Afk, speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
  
  *━━━〈  🎀 Owner 🎀  〉━━━*
 
