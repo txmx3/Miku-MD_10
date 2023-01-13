@@ -36,7 +36,7 @@ npm i
 npm start
 
 ``` 
-- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/Fw437f/Miku-MD/fork) this repo and changed owner number in `config.js`).
+- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that  `config.js`).
 - This method will work on most other bots too.
 
 #### ✧ To stop a bot in Userland
