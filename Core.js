@@ -455,12 +455,12 @@ var levelRole = getLevelingLevel(m.sender)
                                         addLevelingXp(m.sender, amountXp)
                                         if (requiredXp <= getLevelingXp(m.sender)) {
                                         addLevelingLevel(m.sender, 1)
-teks = `「 *User Level UP* 」\n\n@${m.sender.split("@")[0]} got leveled up!!\n\n*User XP*: ${getLevelingXp(m.sender)}\n*Level*: ${getLevel} -> ${getLevelingLevel(m.sender)}\n*Role*: ${role} \n\n`
+teks = `「 *User Level UP* 」\n\n@${m.sender.split("@")[0]} got leveled up!!\n\n*Benutzer XP*: ${getLevelingXp(m.sender)}\n*Level*: ${getLevel} -> ${getLevelingLevel(m.sender)}\n*Role*: ${role} \n\n`
 Miku.sendMessage(m.chat, {text: teks, mentions:[m.sender]}, {quoted:m})
 }
 
                         } catch (err) {
-                                console.error("❌ An error occured !")
+                                console.error("❌ Ein Fehler ist aufgetreten !")
                         }
                 }
                 if (prefix && command) {
@@ -478,7 +478,7 @@ Miku.sendMessage(m.chat, {text: teks, mentions:[m.sender]}, {quoted:m})
                                         }
                                         
                         } catch (err) {
-                                console.error("❌ An error occured !")
+                                console.error("❌ Ein Fehler ist aufgetreten!")
                         }
                 }
 
@@ -695,8 +695,8 @@ let afkTime = user.afkTime
 if (!afkTime || afkTime < 0) continue
 let reason = user.afkReason || ''
 reply(`
-Pls try not to tag him!
-He's in away from keyboard ${reason ? 'with reason ' + reason : 'no reason'}
+Bitte versuche diese Person nicht zu markieren
+Die Person ist derzeit *AFK* ${reason ? 'with reason ' + reason : 'no reason'}
 During ${clockString(new Date - afkTime)}
 `.trim())
 }
@@ -714,17 +714,17 @@ user.afkReason = ''
 
 
 if (m.mtype === 'groupInviteMessage') {
-teks = `I can't join the group untill my *Owner* ask me to join. Type *-owner* to get owner number and ask him.`
-sendOrder(m.chat, teks, "4915212908434", fs.readFileSync('./Assets/pic10.jpg'), `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
+teks = `Ich kann der Gruppe nicht beitreten, bis mein *Eigentümer* mich auffordert, beizutreten.  Geben Sie *#owner* ein, um die Besitzer Telefonnummer zu erhalten, und fragen Sie ihn.`
+sendOrder(m.chat, teks, "4917662927731",'491777062822' fs.readFileSync('./Assets/pic10.jpg'), `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 
 
 if (AntiLink) {
     linkgce = await Miku.groupInviteCode(from)
-    if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-    reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be because you sent this group's link.`)
+    if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) { reply 
+    reply(`\`\`\`「  Antilink System  」\`\`\`\n\n Es erfolgt keine Aktion, da Sie die dieser Gruppenlink gesendet haben .`)
     } else if (isUrl(m.text)) {
-    bvl = `\`\`\`「  *Antilink System*  」\`\`\`\n\nAdmin has sent a link so no action is taken.`
+    bvl = `\`\`\`「  *Antilink System*  」\`\`\`\n\nDer Administrator hat einen Link gesendet, sodass keine Maßnahmen ergriffen werden.`
     if (isAdmins) return reply(bvl)
     if (m.key.fromMe) return reply(bvl)
     if (isCreator) return reply(bvl)
