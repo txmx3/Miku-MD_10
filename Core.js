@@ -1378,15 +1378,15 @@ return list[Math.floor(list.length * Math.random())]
 	
  let smallinput = budy.toLowerCase()
     if (smallinput.includes('hello')) {
-      reply (`Hello *${pushname}*, I am *${BotName}*. How can i help you?`);
+      reply (`Hallo *${pushname}*, Ich bin *${BotName}*. Wie kann ich dir helfen?`);
     } 
 
-    if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-      reply (`Konichiwa *${pushname}*, I am *${BotName}*. How can i help you?`);
+    if( smallinput.includes('Hallo') || smallinput.includes('Hallo') || smallinput.includes('Hallo') || smallinput.includes('Hallo')){
+      reply (`Hallo *${pushname}*, Ich bin *${BotName}*. Wie kann ich dir helfen?`);
     }
    
     if (smallinput=='bot') {
-      reply (`Hello *${pushname}*, I am *${BotName}*, a WhatsApp bot made by *Fantox* and currently being hosted by *${OwnerName}*.  type  *${prefix}help* to get my full command list.`);
+      reply (`Hallo *${pushname}*, Ich bin *${BotName}*, Ein WhatsApp Bot erstellt von: *Fantox* und werde derzeit gehostet von: *${OwnerName}*.  type  *${prefix}help* um die volle Befehlsliste zu bekommen bzw. zu sehen.`);
     }
 
     if (smallinput=='lol') {
@@ -1434,7 +1434,7 @@ case 'me': case 'profile': case 'p':
       pfp ='https://wallpapercave.com/wp/wp10524580.jpg'
     }
 
-     const profilexx = `*「  Profile Info  」*\n\n*User Name* : ${pushname}\n*Bio* : ${bioo}\n*Group Admin Status* : ${adn}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n*Role* : ${role}`
+     const profilexx = `*「  Profil Info  」*\n\n*Benutzer Name * : ${pushname}\n*Bio* : ${bioo}\n*Gruppen Admin Status* : ${adn}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n*Role* : ${role}`
  
 
 
@@ -1457,21 +1457,21 @@ case 'banchat': case 'bangroup':{
 if (isBan) return reply(mess.banned)	 			
 if (!isCreator) return replay(mess.botowner)
 if (args[0] === "on") {
-if (isBanChat) return replay('This Group is Already Banned from using me!')
+if (isBanChat) return replay('Dieser Gruppe ist es bereits verboten, mich zu benutzen!')
 banchat.push(from)
-replay('This Group has been banned from using me!')
+replay('Diese Gruppe wurde *gesperrt*, mich zu benutzen!')
 var groupe = await Miku.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-Miku.sendMessage(from, {text: `\`\`\`「 Notice 」\`\`\`\n\nThis group is banned from using bot. So, here nobody can use me anymore!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Miku.sendMessage(from, {text: `\`\`\`「 Notiz 」\`\`\`\n\nDieser Gruppe ist die Verwendung von bot.  Also, hier kann mich keiner mehr gebrauchen!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
-if (!isBanChat) return replay('This Group is Already Banned from using me!')
+if (!isBanChat) return replay('Dieser Gruppe ist es bereits verboten, mich zu benutzen!')
 let off = banchat.indexOf(from)
 banchat.splice(off, 1)
-replay('This Group has been *unbanned* from using me!')
+replay('Diese Gruppe wurde *entsperrt*, mich zu benutzen!')
 } else {
   let buttonsntnsfw = [
   { buttonId: `${prefix}bangroup on`, buttonText: { displayText: 'Ban' }, type: 1 },
@@ -1493,7 +1493,7 @@ case 'nsfwmenu':
 case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` *━━━〈  📍 Reactions 📍  〉━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
+            reply(` *━━━〈  📍 Reaktionen 📍  〉━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break   
     
 
@@ -1533,7 +1533,7 @@ xfarrapi.Film(q)
     .then(data => {console.log(data)
     let krl = `*Search Term:* ${q}\n\n`
 			    for (let i of data) {
-                krl += (`-----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
+                krl += (`-----------------------------------------------------------------------------\n\n\n*Film Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
                 }
                Miku.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
 });
@@ -1569,12 +1569,12 @@ let buttons = [
 case 'wikimedia': case 'wikiimage': {
 	if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-                if (!args.join(" ")) return reply("What picture are you looking for??")
+                if (!args.join(" ")) return reply("Nach welchem Bild suchen sie?")
 		let { wikimedia } = require('./lib/scraper')
         anu = await wikimedia(args)
         hasil = anu[Math.floor(Math.random() * anu.length)]
         let buttons = [
-            {buttonId: `${prefix}wikimedia ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
+            {buttonId: `${prefix}wikimedia ${args.join(" ")}`, buttonText: {displayText: 'Nächstes Bild'}, type: 1}
         ]
         let buttonMessage = {
             image: { url: hasil.image },
@@ -1592,7 +1592,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
 				   reply(mess.waiting)
-				  Miku.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
+				  Miku.sendMessage(m.chat, { image: { url: cok }, caption: 'Hier ist es...' }, { quoted: m })
 				  break
 
 case 'quotesanime': case 'quoteanime': case 'animequote': case 'animequotes':{
@@ -1679,9 +1679,9 @@ if (isBanChat) return reply(mess.bangc)
             const sendm =  Miku.sendMessage(
 from, 
 {
-text: "Group Settings",
+text: "Gruppen Einstellungen",
 footer: BotName,
-title: "Set your group settings here...",
+title: "Setze deine Gruppeneinstellungen hier...",
 buttonText: "Click Button",
 sections
 }, { quoted : m }
@@ -1878,9 +1878,9 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLink) return replay('Already activated')
+ if (AntiLink) return replay('Ist bereits aktiviert ')
  ntilink.push(from)
- replay('Activated _Antilink_ in this group.')
+ replay('_Antilink_ wurde in dieser Gruppe aktiviert.')
  var groupe = await Miku.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
@@ -1889,10 +1889,10 @@ await Miku.sendMessage(m.chat, { delete: key })
  })
  Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLink) return replay('Already deactivated!')
+ if (!AntiLink) return replay('Ist bereits deaktiviert!')
  let off = ntilink.indexOf(from)
  ntilink.splice(off, 1)
- replay('Deactivated _Antilink_ in this group!')
+ replay('_AntiLink_ wurde in dieser Gruppe deaktiviert!')
  } else {
    let buttonsntilink = [
    { buttonId: `${prefix}antilinkgc on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -1987,16 +1987,16 @@ await Miku.sendMessage(m.chat, { delete: key })
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkInstagram) return replay('Already deactivated')
+ if (!AntiLinkInstagram) return replay('bereits aktiviert')
  let off = ntilinkig.indexOf(from)
  ntilinkig.splice(off, 1)
- replay('Deactivated instagram antilink !')
+ replay('Deaktiviert instagram antilink !')
  } else {
    let buttonsntilink = [
-   { buttonId: `${prefix}antilinkinstagram on`, buttonText: { displayText: 'On' }, type: 1 },
-   { buttonId: `${prefix}antilinkinstagram off`, buttonText: { displayText: 'Off' }, type: 1 }
+   { buttonId: `${prefix}antilinkinstagram on`, buttonText: { displayText: 'An' }, type: 1 },
+   { buttonId: `${prefix}antilinkinstagram off`, buttonText: { displayText: 'Aus' }, type: 1 }
    ]
    await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
    }
@@ -2010,7 +2010,7 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLinkFacebook) return replay('Already activated')
+ if (AntiLinkFacebook) return replay('bereits aktiviert')
  ntilinkfb.push(from)
  replay('Activated facebook antilink !')
  var groupe = await Miku.groupMetadata(from)
@@ -2019,16 +2019,16 @@ await Miku.sendMessage(m.chat, { delete: key })
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkFacebook) return replay('Already deactivated')
+ if (!AntiLinkFacebook) return replay('bereis aktiviert')
  let off = ntilinkfb.indexOf(from)
  ntilinkfb.splice(off, 1)
- replay('Deactivated facebook antilink !')
+ replay('Deaktiviert facebook antilink !')
  } else {
    let buttonsntilink = [
-   { buttonId: `${prefix}antilinkfacebook on`, buttonText: { displayText: 'On' }, type: 1 },
-   { buttonId: `${prefix}antilinkfacebook off`, buttonText: { displayText: 'Off' }, type: 1 }
+   { buttonId: `${prefix}antilinkfacebook on`, buttonText: { displayText: 'An' }, type: 1 },
+   { buttonId: `${prefix}antilinkfacebook off`, buttonText: { displayText: 'Aus' }, type: 1 }
    ]
    await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
    }
@@ -2043,7 +2043,7 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLinkTelegram) return replay('Already activated')
+ if (AntiLinkTelegram) return replay('bereits aktiviert')
  ntilinktg.push(from)
  replay('Activated telegram antilink !')
  var groupe = await Miku.groupMetadata(from)
@@ -2052,16 +2052,16 @@ await Miku.sendMessage(m.chat, { delete: key })
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkTelegram) return replay('Already deactivated')
+ if (!AntiLinkTelegram) return replay('bereits aktiviert')
  let off = ntilinkig.indexOf(from)
  ntilinkig.splice(off, 1)
- replay('Deactivated telegram antilink in this group')
- } else {
+ replay('Deaktiviert Telegram antilink in dieser Gruppe')
+	} else {
    let buttonsntilink = [
-   { buttonId: `${prefix}antilinktelegram on`, buttonText: { displayText: 'On' }, type: 1 },
-   { buttonId: `${prefix}antilinktelegram off`, buttonText: { displayText: 'Off' }, type: 1 }
+   { buttonId: `${prefix}antilinktelegram on`, buttonText: { displayText: 'An' }, type: 1 },
+   { buttonId: `${prefix}antilinktelegram off`, buttonText: { displayText: 'Aus' }, type: 1 }
    ]
    await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
    }
@@ -2076,21 +2076,21 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLinkTiktok) return replay('Already activated')
+ if (AntiLinkTiktok) return replay('bereits aktiviert')
  ntilinktt.push(from)
- replay('Activated tiktok antilink !')
+ replay('aktiviert TikTok antilink !')
  var groupe = await Miku.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkTiktok) return replay('Already deactivated')
+ if (!AntiLinkTiktok) return replay('bereits aktiviert)
  let off = ntilinktt.indexOf(from)
  ntilinktt.splice(off, 1)
- replay('Deactivated tiktok antilink !')
+ replay('Deakt7viert TikTok antilink !')
  } else {
    let buttonsntilink = [
    { buttonId: `${prefix}antilinktiktok on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -2108,21 +2108,21 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLinkTwitter) return replay('Already activated')
+ if (AntiLinkTwitter) return replay('bereits aktiviert')
  ntilinktwt.push(from)
- replay('Activated twitter antilink in this group !')
+ replay('Aktiviert Twitter antilink in dieser Gruppe!')
  var groupe = await Miku.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkTwitter) return replay('Already deactivated')
+ if (!AntiLinkTwitter) return replay('bereits aktiviert')
  let off = ntilinktwt.indexOf(from)
  ntilinktwt.splice(off, 1)
- replay('Deactivated twitter antilink !')
+ replay('Deaktiviert twitter antilink !')
  } else {
    let buttonsntilink = [
    { buttonId: `${prefix}antilinktwt on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -2141,21 +2141,21 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (AntiLinkTwitter) return replay('Already activated')
+ if (AntiLinkTwitter) return replay('bereits aktiviert)
  ntilinkall.push(from)
- replay('Enabled all antilink !')
+ replay('aktiviert antilink für alles bzw. jeden antilink !')
  var groupe = await Miku.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink System Aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
- if (!AntiLinkAll) return replay('Already deactivated')
+ if (!AntiLinkAll) return replay('bereits aktiviert)
  let off = ntilinkall.indexOf(from)
  ntilinkall.splice(off, 1)
- replay('Disabled all antilink !')
+ replay('entfernt jeden antilink !')
  } else {
    let buttonsntilink = [
    { buttonId: `${prefix}antilinkall on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -2174,16 +2174,16 @@ await Miku.sendMessage(m.chat, { delete: key })
  if (!isBotAdmins) return replay(mess.botadmin)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
  if (args[0] === "on") {
- if (antiWame) return replay('Already activated')
+ if (antiWame) return replay('bereits aktiviert)
  ntwame.push(from)
- replay('Activated antiwame !')
+ replay('aktiviert antiwame !')
  var groupe = await Miku.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- Miku.sendMessage(from, {text: `\`\`\`*「  Warning  」*\`\`\`\n\nAntilink is enabled!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ Miku.sendMessage(from, {text: `\`\`\`*「  Warnung  」*\`\`\`\n\nAntilink is aktiviert!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
  if (!antiWame) return replay('Already deactivated')
  let off = nttoxic.indexOf(from)
