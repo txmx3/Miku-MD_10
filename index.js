@@ -27,7 +27,7 @@ console.log(color(figlet.textSync('Miku Bot MD', {
 		whitespaceBreak: true
         }), 'yellow'))
 
-console.log(color('\nHello, I am ✨️MAGIC✨️, the main developer of this bot.\n\nThanks for using: Miku Bot','aqua'))
+console.log(color('\nHallo,Ich bin Max_2 , Der Hauptersteller von diesesm Bot.\n\nDanke das sie Mika bot benutzen','aqua'))
 console.log(color('\nYou can follow me on GitHub: Fw437f','aqua'))
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
@@ -152,7 +152,7 @@ Miku.ev.on('group-participants.update', async (anu) => {
                 mikutext = `
 Hello @${WAuserName.split("@")[0]},
 
-I am *Miku Nakano*, Welcome to ${metadata.subject}.
+Ich bin *Mika Nakano*, Willkommen zu ${metadata.subject}.
 
 *Group Description:*
 ${metadata.desc}
@@ -169,9 +169,9 @@ Miku.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
                 	let WAuserName = num
                     mikutext = `
-Sayonara 👋, @${WAuserName.split("@")[0]},
+Hey 👋, @${WAuserName.split("@")[0]},
 
-I hope you will come back soon, but we are not going to miss you though!
+Ich hoffe, Sie kommen bald wieder, aber wir werden Sie trotzdem nicht vermissen! 
 `
 
     let buttonMessage = {
