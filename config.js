@@ -7,9 +7,9 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['4917662927732','491777062822']
-global.OwnerNumber = ['4917662927732','491777062822']
-global.ownertag = ['4917662927732','491777062822']
+global.Owner = ['4917662927731','491777062822']
+global.OwnerNumber = ['4917662927731','491777062822']
+global.ownertag = ['4917662927731','491777062822']
 global.BotName = "Mika"
 global.packname = "Erstellt Für M&A Inc."
 global.author = "Für: M&A Inc."
