@@ -7,28 +7,28 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['4915212908434']
-global.OwnerNumber = ['4915212908434']
-global.ownertag = ['4915212908434']
-global.BotName = "Miku"
-global.packname = "Erstellt Für ✨️MAGIC✨️"
-global.author = "Für: ✨️MAGIC✨️"
-global.OwnerName = "✨️MAGIC✨️"
+global.Owner = ['4917662927732','491777062822']
+global.OwnerNumber = ['4917662927732','491777062822']
+global.ownertag = ['4917662927732','491777062822']
+global.BotName = "Mika"
+global.packname = "Erstellt Für M&A Inc."
+global.author = "Für: M&A Inc."
+global.OwnerName = "M&A Inc."
 global.BotSourceCode = "https://github.com/Kai0071"
 global.SupportGroupLink = "https://chat.whatsapp.com/C4UvfSXyYZoDSV3gJDyCm3"
 global.sessionName = "session"
 
 
 
-global.prefa = ['!']
+global.prefa = ['#']
 
 
 global.location = "West Berlin, Germany"
 global.reactmoji = "❤️"
 global.themeemoji = "💖"
 global.vidmenu = { url: 'https://c.tenor.com/YGuLegQWubwAAAPo/miku-nakano-gotoubun-no-hanayome.mp4' }
-global.websitex = "https://github.com/Kai0071"
-global.lolhuman = "✨️MAGIC✨️"
+global.websitex = "https://github.com/txmx3/Miku-MD_9"
+global.lolhuman = "M&A Inc."
 
 
 global.BotLogo = fs.readFileSync("./Assets/pic1.jpg")
@@ -58,19 +58,19 @@ global.ntilink = []
 
 
 global.mess = {
-    jobdone: 'Job done...',
-    useradmin: 'Sorry, only *Group Admins* can use this command *Baka*!',
-    botadmin: 'Sorry, i cant execute this command without being an *Admin* of this group.',
-    botowner: 'Only my *Owner* can use this command, Baka!',
-    grouponly: 'This command is only made for *Groups*, Baka!',
-    privateonly: 'This command is only made for *Private Chat*, Baka!',
-    botonly: 'Only the *Bot itself* can use this command!',
-    waiting: 'Chotto Matte...',
-    nolink: 'Please provide me *link*, Baka!',
-    error: 'An error occurd!',
-    banned: 'You are *Banned* fron using commands!',
-    bangc: 'This Group is *Banned* from using Commands!',
-    nonsfw: 'Dont be a pervert Baka! This is not a NSFW enabled group!'
+    jobdone: 'Job erledigt...',
+    useradmin: 'Entschuldigung,nur *Gruppen Admins* können diesen Befehl benutzen *Baka*!',
+    botadmin: 'Entschuldigung, Ich kann diesen Befehl nicht ausführen, ohne ein *Admin* dieser Gruppe zu sein. ',
+    botowner: 'Nur mein *Eigentümer* kann diesen Befehl verwenden,  Baka!',
+    grouponly: 'Dieser Befehl ist nur für *Gruppen* gemacht, *Baka*!',
+    privateonly: 'Dieser Befehl ist nur für *Private Chat* gemacht, , *Baka*!',
+    botonly: 'Nur der *Bot selbst* kann diesen Befehl verwenden! ',
+    waiting: 'Bitte warten ...',
+    nolink: 'Bitte gib mir *link* , Baka!',
+    error: 'Ein Fehler ist aufgetreten !',
+    banned: 'Sie sind für die Verwendung von Befehlen , bei diesem Bot *gesperrt*! ',
+    bangc: 'Diese Gruppe ist von der Verwendung von Befehlen , bei diesem Bot *gesperrt*! ',
+    nonsfw: 'Sei kein perverser *Baka*! Dies ist keine NSFW-aktivierte Gruppe! '
     
 }
 
