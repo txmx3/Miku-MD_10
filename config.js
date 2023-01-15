@@ -11,9 +11,9 @@ global.Owner = ['4917662927731','491777062822']
 global.OwnerNumber = ['4917662927731','491777062822']
 global.ownertag = ['4917662927731','491777062822']
 global.BotName = "Mika"
-global.packname = "Erstellt Für M&A Inc."
-global.author = "Für: M&A Inc."
-global.OwnerName = "M&A Inc."
+global.packname = "Erstellt Für M&K Inc."
+global.author = "Für: M&K Inc."
+global.OwnerName = "M&K Inc."
 global.BotSourceCode = "https://github.com/Kai0071"
 global.SupportGroupLink = "https://chat.whatsapp.com/C4UvfSXyYZoDSV3gJDyCm3"
 global.sessionName = "session"
@@ -28,7 +28,7 @@ global.reactmoji = "❤️"
 global.themeemoji = "💖"
 global.vidmenu = { url: 'https://c.tenor.com/YGuLegQWubwAAAPo/miku-nakano-gotoubun-no-hanayome.mp4' }
 global.websitex = "https://github.com/txmx3/Miku-MD_9"
-global.lolhuman = "M&A Inc."
+global.lolhuman = "M&K Inc."
 
 
 global.BotLogo = fs.readFileSync("./Assets/pic1.jpg")
