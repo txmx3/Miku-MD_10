@@ -715,7 +715,8 @@ user.afkReason = ''
 
 if (m.mtype === 'groupInviteMessage') {
 teks = `Ich kann der Gruppe nicht beitreten, bis mein *Eigentümer* mich auffordert, beizutreten.  Geben Sie *#owner* ein, um die Besitzer Telefonnummer zu erhalten, und fragen Sie ihn.`
-sendOrder(m.chat, teks, "4917662927731",'491777062822' fs.readFileSync('./Assets/pic10.jpg'), `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
+sendOrder(m.chat, teks, "4917662927731",'491777062822' fs.readFileSync('./Assets/pic10.jpg'), `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net",
+"AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 
 
