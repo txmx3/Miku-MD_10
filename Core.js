@@ -3264,13 +3264,13 @@ case 'tiktoknowm': case 'ttnowm':{
   if (isBanChat) return reply(mess.bangc)
 if (!q) return reply('Please provide the link !')
 reply(mess.wait)
-if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
+if (!q.includes('tiktok')) return reply('Das ist kein Tiktok Link!`)
  const musim_rambutan = await MikuTiktok(`${q}`).catch(e => {
 reply(mess.error) 
 } )
  console.log(musim_rambutan)
  const mikutiktoknowm = musim_rambutan.result.nowatermark
-  Miku.sendMessage(from, { video: { url: mikutiktoknowm }, caption: "Here it is..." }, { quoted: m })
+  Miku.sendMessage(from, { video: { url: mikutiktoknowm }, caption: "Hier ist es..." }, { quoted: m })
  }
 break
 
@@ -3280,7 +3280,7 @@ case 'ttaud':{
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
 if (!q) return reply('Where is the audio?')
-if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
+if (!q.includes('tiktok')) return reply(`Das'ist kein Tiktok Link!`)
  const musim_rambutan = await MikuTiktok(`${q}`).catch(e => {
 reply(mess.error) 
 } )
@@ -3300,7 +3300,7 @@ case 'music': case 'play': case 'song': case 'ytplay': {
  const YT=require('./lib/ytdlcore')
  const { isUrl, fetchBuffer } = require('./lib/Function')
 
- if(!text) return Miku.sendMessage(from,{text:"Pls enter song name to play!"},{quoted:m})
+ if(!text) return Miku.sendMessage(from,{text:"Bitte schreibe einen Songtext zum spielen!"},{quoted:m})
  let yts = require("yt-search")
  let search = await yts(text)
  let anu = search.videos[0]
@@ -3334,18 +3334,18 @@ case 'music': case 'play': case 'song': case 'ytplay': {
         return `${Math.floor(Math.random() * 10000)}${ext}`;
       };
         if (args.length === 0) {
-          reply(`❌ URL is empty! \nSend ${prefix}yta url`);
+          reply(`❌ URL is empty! \nSende ${prefix}yta url`);
           return;
         }
         let urlYt = args[0];
         if (!urlYt.startsWith("http")) {
-          reply(`❌ Give youtube link!`);
+          reply(`❌ Gebe einen Youtube Link!`);
           return;
         }
         let infoYt = await ytdl.getInfo(urlYt);
         //30 MIN
         if (infoYt.videoDetails.lengthSeconds >= 1800) {
-          reply(`❌ Video too big!`);
+          reply(`❌ Video ist zu lang!`);
           return;
         }
         let titleYt = infoYt.videoDetails.title;
@@ -3355,7 +3355,7 @@ case 'music': case 'play': case 'song': case 'ytplay': {
           filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
         }).pipe(fs.createWriteStream(`./${randomName}`));
         console.log("Audio downloading ->", urlYt);
-        // reply("Downloading.. This may take upto 5 min!");
+        // reply("Downloading... Dieser Vorgang kann 5 Minuten dauern!");
         await new Promise((resolve, reject) => {
           stream.on("error", reject);
           stream.on("finish", resolve);
@@ -3377,7 +3377,7 @@ case 'music': case 'play': case 'song': case 'ytplay': {
             { quoted:m }
           );
         } else {
-          m.reply(`❌ File size bigger than 40mb.`);
+          m.reply(`❌ Datei ist größer als 40MB.`);
         }
        fs.unlinkSync(`./${randomName}`);
     }
@@ -3387,18 +3387,18 @@ break
         return `${Math.floor(Math.random() * 10000)}${ext}`;
       };
         if (args.length === 0) {
-          m.reply(`❌ URL is empty! \nSend ${prefix}ytv url`);
+          m.reply(`❌ URL ist leer! \nSend ${prefix}ytv url`);
           return;
         }
         let urlYt = args[0];
         if (!urlYt.startsWith("http")) {
-          m.reply(`❌ Give youtube link!`);
+          m.reply(`❌ Gebe einen Youtube Link!`);
           return;
         }
         let infoYt = await ytdl.getInfo(urlYt);
         //30 MIN
         if (infoYt.videoDetails.lengthSeconds >= 1800) {
-          m.reply(`❌ Video file too big!`);
+          m.reply(`❌ Video Datei ist zu groß!`);
           return;
         }
         let titleYt = infoYt.videoDetails.title;
@@ -3409,7 +3409,7 @@ break
         }).pipe(fs.createWriteStream(`./${randomName}`));
         //22 - 1080p/720p and 18 - 360p
         console.log("Video downloading ->", urlYt);
-        // reply("Downloading.. This may take upto 5 min!");
+        // reply("Downloading.. Dieser Vorgang kann 5 Minuten dauern!");
         await new Promise((resolve, reject) => {
           stream.on("error", reject);
           stream.on("finish", resolve);
@@ -3430,7 +3430,7 @@ break
             { quoted: m }
           );
         } else {
-          m.reply(`❌ File size bigger than 40mb.`);
+          m.reply(`❌ Datei ist größer als 40MB.`);
         }
       
         fs.unlinkSync(`./${randomName}`);
@@ -3453,7 +3453,7 @@ break
  ]
  let buttonMessage = {
  image: { url: anu.thumbnail },
- caption: `「  _Miku Youtube Downloader 2.0_  」
+ caption: `「  _Mika Youtube Downloader 2.0_  」
 
 *Title :* ${anu.title}
 
@@ -3476,8 +3476,8 @@ break
  const YT=require('./lib/ytdlcore')
     const ytmp4play2 = await YT.mp4(text)
     let vidduration =ytmp4play2.duration;
-    if (vidduration > 1800) return reply('Cant send videos longer than *30 min*')
- Miku.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *Miku MD*',}, {quoted:m})
+    if (vidduration > 1800) return reply('Videos können nicht länger gesendet werden als *30 min*')
+ Miku.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *Mika MD*',}, {quoted:m})
  }
  break
 
@@ -3489,8 +3489,8 @@ if (isBanChat) return reply(mess.bangc)
          reply(mess.waiting)
          let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
          let random = anu[Math.floor(Math.random() * anu.length)]
-         Miku.sendMessage(m.chat, { image: { url: random.male }, caption: `For him...` }, { quoted: m })
-         Miku.sendMessage(m.chat, { image: { url: random.female }, caption: `For her...` }, { quoted: m })
+         Miku.sendMessage(m.chat, { image: { url: random.male }, caption: `Für ihn ...` }, { quoted: m })
+         Miku.sendMessage(m.chat, { image: { url: random.female }, caption: `Für sie...` }, { quoted: m })
      }
  break
 
@@ -3499,7 +3499,7 @@ if (isBanChat) return reply(mess.bangc)
 case 'pinterest': case 'pin': {
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
- if (!args.join(" ")) return reply("Pls providea search term!")
+ if (!args.join(" ")) return reply("Bitte geben Sie einen Suchbegriff ein! ")
  try {
  hx.pinterest(args.join(" ")).then(async(res) => {
  imgnyee = res[Math.floor(Math.random() * res.length)]
@@ -3539,12 +3539,12 @@ let media = await quoted.download()
 let encmedia = await Miku.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds is allowed!')
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximal 10 Sekundensind erlaubt!')
 let media = await quoted.download()
 let encmedia = await Miku.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 seconds is allowed!`)
+reply(`Send Image/Video With Caption ${prefix + command}\nVideodauer 1-9 Sekunden ist erlaubt! `)
 }
 }
 break
@@ -3556,9 +3556,9 @@ case 'smeme': case 'stickermeme': case 'stickmeme': {
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
 let { TelegraPh } = require('./lib/uploader')
-if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
-if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
-if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
+if (!text) return reply(`Foto mit Bildunterschrift senden/antworten  ${prefix + command} *text*`)
+if (text.includes('|')) return reply(`Foto mit Bildunterschrift senden/antworten  ${prefix + command} *text*`)
+if (!/image/.test(mime)) return reply(`Foto mit Bildunterschrift senden/antworten  ${prefix + command} *text*`)
 reply(mess.wait)
 mee = await Miku.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
@@ -3576,12 +3576,12 @@ case 'sgif': case 'sticker': case 's': {
  let encmedia = await Miku.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(encmedia)
  } else if (/video/.test(mime)) {
- if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+ if ((quoted.msg || quoted).seconds > 11) return reply('Maximal 10 Sekunden!')
  let media = await quoted.download()
  let encmedia = await Miku.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(encmedia)
  } else {
- reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Dauer 1-9 Sekunden `)
  }
  }
  break
@@ -3589,9 +3589,9 @@ case 'sgif': case 'sticker': case 's': {
 case 'wiki':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-if (args.length < 1) return reply('What Are You Looking For?? ')
+if (args.length < 1) return reply('Wonach suchen Sie? ? ')
 const res2 = await wikiSearch(q).catch(e => {
-return reply('Error Result Not Found!') 
+return reply('Error Ergebnis nicht gefunden!') 
 }) 
 const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
 Miku.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
@@ -3628,7 +3628,7 @@ let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
 Ohh i see 👀💖...`
 let menst = [orang, jodoh]
 let buttons = [
-{ buttonId: '❤️', buttonText: { displayText: 'Congratulations ❤️' }, type: 1 }
+{ buttonId: '❤️', buttonText: { displayText: 'Glückwünsch ❤️' }, type: 1 }
 ]
 await Miku.sendButtonText(m.chat, buttons, jawab, Miku.user.name, m, {mentions: menst})
 }
@@ -3645,7 +3645,7 @@ let jawab = `👫 Soulmates
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
 let ments = [me, jodoh]
 let buttons = [
-{ buttonId: '❤️', buttonText: { displayText: 'Be my Soulmate ❤️' }, type: 1 }
+{ buttonId: '❤️', buttonText: { displayText: 'Sei mein Seelenverwandter  ❤️' }, type: 1 }
 ]
 await Miku.sendButtonText(m.chat, buttons, jawab, Miku.user.name, m, {mentions: ments})
 }
@@ -3654,7 +3654,7 @@ break
 case 'handsomecheck':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Fantox`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @txmx3`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
@@ -3662,7 +3662,7 @@ Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*
 case 'beautifulcheck':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Fantox`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @txmx3`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
@@ -3679,7 +3679,7 @@ case 'awesomecheck':
                       case 'uglycheck':
                         if (isBan) return reply(mess.banned)
                         if (isBanChat) return reply(mess.bangc)
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Fantox`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @txmx3`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
@@ -3689,7 +3689,7 @@ Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
 case 'charactercheck':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Fantox`)
+					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @txmx3`)
 					const Mikutttt =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = Mikutttt[Math.floor(Math.random() * Mikutttt.length)]
 					Miku.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
@@ -3699,10 +3699,9 @@ case 'charactercheck':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
                    const dare =[
-         "eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
-         "spill people who make you pause",
-         "call crush/pickle now and send ss",
-         "drop only emote every time you type on gc/pc for 1 day.",
+         "Essen Sie 2 Esslöffel Reis ohne Beilagen, wenn es schleppend ist, können Sie trinken ",
+         "verschütte Leute, die dich pausieren lassen",
+         "Drop-Only-Emote jedes Mal, wenn Sie 1 Tag lang auf gc/pc tippen .",
          "say Welcome to Who Wants To Be a Millionaire! to all the groups you have",
          "call ex saying miss",
          "sing the chorus of the last song you played",
@@ -3903,7 +3902,7 @@ reply(mess.waiting)
     ]
   let nsfwapimess = {
    image: waifudhgd,
-   caption:  `Here it is...`,
+   caption:  'Hier ist es...`,
   buttons: nsfwapireply,
   headerType: 1
   }     
@@ -3931,7 +3930,7 @@ case 'ahegao' : case 'ass' : case 'bdsm' :  case 'cuckold' :  case 'cum' : case 
         ]
       let nsfwapimess = {
        image: waifudhgd,
-       caption:  `Here it is...`,
+       caption:  `Hier ist es...`,
       buttons: nsfwapireply,
       headerType: 1
       }     
@@ -4025,7 +4024,7 @@ reply(mess.waiting)
     ]
   let button4Messages = {
    image: {url:waifudd.data.url},
-   caption:  `Here it is...`,
+   caption:  `Hier ist es...`,
   buttons: nwaifubot,
   headerType: 1
   }      
@@ -4047,7 +4046,7 @@ reply(mess.waiting)
         ]
       let button1ssMessages = {
        image: {url:waifudd.data.url},
-       caption:  `Here it is...`,
+       caption:  `Hier ist es...`,
       footer: `${global.BotName}`,
       buttons: wbuttsss,
       headerType: 4
@@ -4089,7 +4088,7 @@ reply(mess.waiting)
     ]
   let xx1button3Messages = {
    image: {url:waifudd.data.url},
-   caption:  `Here it is...`,
+   caption:  `Hier ist es...`,
   buttons: xxhnekobot,
   headerType: 1
   }      
@@ -4109,7 +4108,7 @@ reply(mess.waiting)
         ]
       let button112ssMessages = {
        image: {url:waifudd.data.url},
-       caption:  `Here it is...`,
+       caption:  `Hier ist es...`,
       footer: `${global.BotName}`,
       buttons: wbuttsss,
       headerType: 4
@@ -4130,7 +4129,7 @@ case 'crossplay': case 'crosplay': case 'cosplay':
             ]               
         const cosplybutton = {
         image: {url: 'https://hanzz-web.herokuapp.com/api/randomimage/cosplay'},
-        caption: "Guess who am i...",
+        caption: "Rate wer ich bin ...",
         footer: `${global.BotName}`,
         buttons: buttons,
         headerType: 4
@@ -4156,7 +4155,7 @@ reply(mess.waiting)
         ]
       let buttonssMessage = {
        image: {url:waifud.data.url},
-       caption:  `Here it is...`,
+       caption:  `Hier ist es...`,
       footer: `${global.BotName}`,
       buttons: wbutsss,
       headerType: 4
@@ -4181,7 +4180,7 @@ reply(mess.waiting)
         ]
       let buttonssMessages = {
        image: {url:waifudd.data.url},
-       caption:  `Here it is...`,
+       caption:  `Hier ist es...`,
       footer: `${global.BotName}`,
       buttons: wbuttsss,
       headerType: 4
@@ -4325,7 +4324,7 @@ users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : tex
 	 ment=[messsender,m.sender]
 }
 if(users == "none"){
-     musers =`@${m.sender.split("@")[0]} is dancing alone!!`
+     musers =`@${m.sender.split("@")[0]} Tanzt alleine!!`
      console.log(musers)
 
 } else {
@@ -4530,7 +4529,7 @@ case 'anime':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
-	    if(!q) return reply(`Please proide a search term!\n\n*Example:* ${prefix}anime naruto`)
+	    if(!q) return reply(`Bitte geben Sie einen Suchbegriff ein !\n\n*Example:* ${prefix}anime naruto`)
 reply(mess.waiting)							
 const { Anime } =require("@shineiichijo/marika")
     const client = new Anime();
@@ -4577,7 +4576,7 @@ case 'manga':
 reply(mess.waiting)							
 const { Manga } =require("@shineiichijo/marika")
 const manga = new Manga();
-if(!q) return reply(`Please proide a search term!\n\n_Example:_ ${prefix}manga naruto`)
+if(!q) return reply(`Bitte geben Sie einen Suchbegriff ein !\n\n_Example:_ ${prefix}manga naruto`)
 let srh = await manga.searchManga(q)
     let mang = `*Title:* ${srh.data[0].title}\n`;
     mang += `*Status:* ${srh.data[0].status}\n`;
@@ -4728,7 +4727,7 @@ case 'bc': case 'broadcast': case 'bcall': {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-if (!args.join(" ")) return replay(`Please enter some text to broadcast! \n\nExample : ${prefix + command} ${global.OwnerName}`)
+if (!args.join(" ")) return replay(`Bitte geben Sie einen zu sendenden Text ein ! \n\nExample : ${prefix + command} ${global.OwnerName}`)
 let anu = await store.chats.all().map(v => v.id)
 replay(`Send Broadcast To ${anu.length} Chat\nTime's up ${anu.length * 1.5} second`)
 for (let yoi of anu) {
@@ -4758,7 +4757,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
       
  const helpmenu = `Konichiwa *${pushname}* Senpai,
 
-I am *Miku Nakano*, a bot developed by *✨️MAGIC✨️*.
+I am *Mika Nakano*, a bot developed by *Max_2 and txmx3*.
 
 🔰 My prefix is:  ${prefix}
 
@@ -4832,7 +4831,7 @@ reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomec
 
 
  『  *${global.BotName}*  』
- Powered by: *✨️MAGIC✨️*
+ Powered by: *Max_2 and txmx3*
 
  🔰 To use any of these commands type 
  " *${prefix}<Command name>* ".
@@ -4953,7 +4952,7 @@ const mikuarray= [
         if (!args[0]) return reply("Enter your location to search weather.")
          myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Standort suchen :* ${myweather.data.name}\n*💮 Land:* ${myweather.data.sys.country}\n🌈 *Wetter:* ${myweather.data.weather[0].description}\n🌡️ *Temperatur:* ${myweather.data.main.temp}°C\n❄️ *Minimale Temperatur:* ${myweather.data.main.temp_min}°C\n📛 *Maximale Temperatur:* ${myweather.data.main.temp_max}°C\n💦 *Feuchtigkeit :* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
         Miku.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break
