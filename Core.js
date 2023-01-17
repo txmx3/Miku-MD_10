@@ -713,7 +713,7 @@ user.afkReason = ''
 }
 
 if (m.mtype === 'groupInviteMessage') {
-teks = `I can't join the group untill my *Owner* ask me to join. Type *-owner* to get owner number and ask him.`
+teks = `Ich kann der Gruppe nicht beitreten, bis mein *Eigentümer* mich auffordert, beizutreten. Geben Sie *-owner* ein, um die Besitzernummer zu erhalten, und fragen Sie ihn .`
 sendOrder(m.chat, teks, "4915212908434", fs.readFileSync('./Assets/pic10.jpg'), 
 `${watermark}`, `${BotName}`, "916909137213@s.whatsapp.net", 
 "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
